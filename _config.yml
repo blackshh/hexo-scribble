@@ -1,0 +1,19 @@
+title: blackshh
+description: 纸上得来终觉浅，绝知此事要躬行。
+
+menu:
+  Blog: /
+  About: /about
+  Email: mailto:blackshh@qq.com
+  Github: https://github.com/blackshh
+
+rss: /atom.xml
+
+# your name
+signoff: blackshh
+
+# disqus comment thread for post header options ( leave blank if unwanted )
+disqus_shortname: 
+
+# set tracking, UA-XXXX-Y
+google_analytics: 
