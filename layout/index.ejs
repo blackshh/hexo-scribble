@@ -1,31 +1,42 @@
 <html>
-  <head>
-    <title><%= theme.title %></title>
-    <%- partial('_partial/head') %>
-  </head>
-  <body>
-    <%- partial('_partial/header') %>
+
+<head>
+  <title>
+    <%= theme.title %>
+  </title>
+  <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+</head>
+
+<body>
+  <%- partial('_partial/header') %>
     <div id='container'>
       <%- partial('_partial/links') %>
-      <div class='content'>
-        <ul class='posts'>
-          <% page.posts.each(function (post) { %>
-          <li>
-            <small class='datetime muted' data-time='<%= post.date %>'><%- date(post.date, config.date_format) %></small>
-            <a href='<%- url_for(post.path) %>'><%= post.title %></a>
-          </li>
-          <% }) %>
-        </ul>
-      </div>
-      <% if (page.total > 1) { %>
-        <div id='page-nav'>
-          <%- paginator({
+        <div class='content'>
+          <ul class='posts'>
+            <% page.posts.each(function (post) { %>
+              <li>
+                <small class='datetime muted' data-time='<%= post.date %>'>
+                  <%- date(post.date, config.date_format) %>
+                </small>
+                <a href='<%- url_for(post.path) %>'>
+                  <%= post.title %>
+                </a>
+              </li>
+              <% }) %>
+          </ul>
+        </div>
+        <% if (page.total > 1) { %>
+          <div id='page-nav'>
+            <%- paginator({
             prev_text: '< Prev',
             next_text: 'Next >'
           }) %>
-        </div>
-      <% } %>
+          </div>
+          <% } %>
     </div>
     <%- partial('_partial/footer') %>
-  </body>
+</body>
+
 </html>

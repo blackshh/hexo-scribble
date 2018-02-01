@@ -1,28 +1,39 @@
 <html>
-  <head>
-    <title><%= page.title %> - <%= theme.title %></title>
-    <%- partial('_partial/head') %>
-  </head>
-  <body>
-    <%- partial('_partial/header') %>
+
+<head>
+  <title>
+    <%= page.title %> -
+      <%= theme.title %>
+  </title>
+  <%- partial('_partial/head') %>
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+  <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+</head>
+
+<body>
+  <%- partial('_partial/header') %>
     <div id='container'>
       <%- partial('_partial/links') %>
-      <%- partial('_partial/post_pagination') %>
-      <div class='content'>
-        <section class='post'>
-          <h1>
-            
-            <%= page.title %>
-          </h1>
-          <%- page.content %>
-          <%- partial('_partial/signoff') %>
-        </section>
-      </div>
-      <% if (theme.disqus_shortname) { %>
-        <%- partial('_partial/disqus') %>
-      <% } %>
-      <%- partial('_partial/links') %>
+        <%- partial('_partial/post_pagination') %>
+          <div class='content'>
+            <section class='post'>
+              <h1>
+
+                <%= page.title %>
+              </h1>
+              <%- page.content %>
+                <%- partial('_partial/signoff') %>
+            </section>
+          </div>
+          <% if (theme.disqus_shortname) { %>
+            <%- partial('_partial/disqus') %>
+              <% } %>
+                <%- partial('_partial/links') %>
     </div>
     <%- partial('_partial/footer') %>
-  </body>
+</body>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
 </html>

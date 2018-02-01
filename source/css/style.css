@@ -152,13 +152,14 @@ a, .as-link {
   a.main, .as-link.main, {
     background-repeat: repeat-x;
     background-position: left bottom; }
-  .alink:hover{
-    text-decoration: none !important;
-    color: #428bca !important;
-  }  
+
   a:hover{
     color: red;
     text-decoration:underline;
+  }
+  .paging a:hover{
+    text-decoration: none !important;
+    color: #428bca !important;
   }
   a.big-button, .as-link.big-button {
     min-width: 30%;
@@ -244,7 +245,7 @@ ul.posts .datetime {
   text-transform: uppercase;
   float: right;
   color: #999;
-  font-size: 10px;
+  font-size: 14px;
   text-align: right; }
 
 section.post {
@@ -284,7 +285,7 @@ section.post {
 pre {
   word-wrap: break-word;
   color: #eee;
-  background: #29281e;
+  background: #f8f8f8;
   padding: 1em;
   border-radius: 5px;
   width: 100%;
